@@ -1,0 +1,38 @@
+<div style="text-align:center">
+	<h1>
+		Welcome to {{title | lowercase}}.
+	</h1>
+</div>
+<div> Months :
+	<select (change) = "changemonths($event)" name = "rest">
+      <option *ngFor="let i of months">{{i}}</option>
+   </select>
+</div>
+<br/>
+<div>
+   <span *ngIf="isavailable; then condition1 else condition2">Condition is valid.</span>
+   <ng-template #condition1>Condition is valid</ng-template>
+   <ng-template #condition2>Condition is invalid</ng-template>
+ </div>
+  <button (click)="myClickFunction($event)">Click me !</button> 
+  <div>
+  
+</div>  
+<br/>
+<h1>Custom Pipe</h1>
+<b>Square root of 25 is: {{25 | sqrt}}</b>
+<br/>
+<b>Square root of 729 is: {{729 | sqrt}}</b> 
+<br/>
+<b>Square root of 9 is: {{9 | sqrt}}</b> 
+<br />
+<br />
+<br />
+<a routerLink = "/new-cmpcomponent">New Component</a>
+<br />
+ 
+<ul *ngFor = "let data of httpdata">
+   <li>Name : {{data.name}} Address: {{data.address.city}}</li>
+</ul>
+<router-outlet></router-outlet>
+ 
